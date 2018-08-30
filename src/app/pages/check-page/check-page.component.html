@@ -1,0 +1,250 @@
+<app-header></app-header>
+<div class="page-content">
+  <div class="container">
+    <div class="page-block">
+      <div class="row">
+        <div class="col-md-12">
+            <h3>Введите информацию о заемщике</h3>
+            <div class="separator"></div>
+        </div>
+      </div>
+      <form class="form">
+      <div class="check-user--info">
+        <div class="row align-center check-user--info__top">
+          <div class="col-md-2">
+            <div class="check-image">
+              <div class="input-image">
+                <input type="file" (change)="onFileSelect($event)"/>
+                <div class="overlay">Перетащите <br> фотографию заемщика</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <h2>Вартанян Вазген Алебекович</h2>
+          </div>
+          <div class="col-md-2 ml">
+            <span>ID заемщика</span>
+            <p>5636367884400</p>
+          </div>
+          <div class="col-md-2">
+            <span>ID займа</span>
+            <p>7274534564</p>
+          </div>
+          <div class="col-md-3 ml">
+            <span>Кредитный риск в процентах</span>
+            <p>50%</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label>ФИО заемщика</label>
+            <input type="text">
+            <label>Пол</label>
+            <select name="" id="">
+              <option value="">Мужской</option>
+              <option value="">Женский</option>
+            </select>
+            <label>Образование</label>
+            <select name="">
+              <option value="">Высшее</option>
+              <option value="">Среднее</option>
+              <option value="">Без образования</option>
+            </select>
+          </div>
+          <div class="col-md-4 ml-big">
+            <label>Серия и номер паспорта</label>
+            <input type="text">
+            <label>Сумма займа, руб</label>
+            <input type="text">
+            <label>Приложите кредитную историю</label>
+            <div class="input-file">
+              <input type="file" (change)="onFileSelect($event)">
+              <div class="btn btn-1 btn-1-2">
+                Добавить файл
+              </div>
+              <span>{{creditHistory}}</span>
+            </div>
+          </div>
+          <div class="col"></div>
+          <div class="col-md-3">
+            <label>Дата рождения</label>
+            <input type="text"
+              class="form-control datepicker"
+              bsDatepicker>
+            <label>Срок займа, мес</label>
+            <input type="text">
+          </div>
+        </div>
+        <div class="row row-mr">
+          <div class="col-md-12">
+              <div class="graph">
+                  <div class="graph-main">
+                    <div class="graph-scale">
+                      <div class="graph-scale-item" *ngFor="let item of scaleItems">
+                        {{item}}
+                      </div>
+                    </div>
+                    <div class="graph-content">
+                      <div class="graph-layout">
+                        <div class="graph-layout--item" *ngFor="let item of scaleItems"></div>
+                      </div>
+                      <div class="graph-options">
+                        <div class="graph-options--item" *ngFor="let item of graph.options"
+                          [ngStyle]="{'width.%': 100 / graph.options.length,
+                          'height.px': calcHeight(item),
+                          'top.px': calcTop(item) }"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="graph-titles">
+                      <div class="graph-titles--item" *ngFor="let item of graph.options"
+                      [ngStyle]="{'width.%': (100 / graph.options.length) * 0.4,
+                      'margin-right.%': (100 / graph.options.length) * 0.59
+                        }">
+                        {{ item.name }}
+                      </div>
+                    </div>
+                </div>
+          </div>
+
+        </div>
+        <div class="row btn-row">
+          <div class="col-md-3">
+            <div class="btn btn-primary">Рассчитать</div>
+          </div>
+          <div class="col-md-4">
+              <div class="btn btn-light">Рекомендация: Выдать кредит</div>
+          </div>
+          <div class="col">
+              <div class="btn btn-success">Выдача кредита</div>
+          </div>
+          <div class="col-3">
+            <div class="btn btn-danger">Отказ выдачи кредита</div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+
+<div class="page-content">
+  <div class="container">
+    <div class="page-block">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Введите информацию о заемщике</h3>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <form action="" class="form form-2">
+                <div class="check-user--info ">
+                  <div class="check-user--info__top">
+                    <div class="check-image">
+                      <div class="input-image">
+                        <input type="file" (change)="onFileSelect($event)"/>
+                        <div class="overlay">Перетащите <br> фотографию заемщика</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="input-full">
+                        <label>ФИО заемщика</label>
+                        <input type="text">
+                      </div>
+                      <div class="input-auto">
+                          <label>Пол</label>
+                          <select name="" id="">
+                            <option value="">Мужской</option>
+                            <option value="">Женский</option>
+                          </select>
+                      </div>
+
+                      <div class="input-full">
+                        <label>Серия и номер паспорта</label>
+                        <input type="text">
+                      </div>
+                      <div class="input-full">
+                        <label>Сумма займа, руб</label>
+                        <input type="text">
+                      </div>
+                      <div class="input-full">
+                        <label>Срок займа</label>
+                        <input type="text">
+                      </div>
+                      <div class="input-file btn-wrapper btn-wrapper__left">
+                        <input type="file" (change)="onFileSelect($event)">
+                        <div class="btn btn-primary">Приложите кредитную испорию</div>
+                        <span>{{creditHistory2}}</span>
+                      </div>
+                      <div class="input-auto">
+                        <select name="">
+                          <option value="" selected disabled>Образование</option>
+                          <option value="">Высшее</option>
+                          <option value="">Среднее</option>
+                          <option value="">Без образования</option>
+                        </select>
+                      </div>
+                      <div class="btn-wrapper btn-wrapper__left">
+                          <div class="btn btn-primary">Рассчитать</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+          </div>
+        <div class="col-md-6">
+            <div class="user-info">
+              <div class="check-image">
+                <div class="input-image input-image--selected">
+                  <img src="assets/img/user.png" alt="">
+                </div>
+              </div>
+              <p>Вартанян Вазген Алекбекович</p>
+              <h3>ID заемщика</h3>
+              <h4><span>55 689 774</span></h4>
+              <h3>ID займа</h3>
+              <h4><span>1230 7845 4511 7423</span></h4>
+              <div class="separator"></div>
+              <div class="chance-items">
+                <div class="chance-item">
+                  <div class="chance-item--top">
+                    <span>12%</span>
+                    <h3>Вероятность просрочки</h3>
+                  </div>
+                  <p>Шансы на получение кредита очень низкие из-за перечисленных ниже факторов.</p>
+                </div>
+                <div class="chance-item">
+                  <div class="chance-item--top">
+                    <span>16%</span>
+                    <h3>Вероятность просрочки 30 дней</h3>
+                  </div>
+                  <p>Шансы на получение кредита очень низкие из-за перечисленных ниже факторов.</p>
+                </div>
+                <div class="chance-item">
+                  <div class="chance-item--top">
+                    <span>16%</span>
+                    <h3>Вероятность дефота</h3>
+                  </div>
+                  <p>Шансы на получение кредита очень низкие из-за перечисленных ниже факторов.</p>
+                </div>
+              </div>
+              <div class="separator"></div>
+              <div class="btn-wrapper btn-wrapper__left">
+                <a href="" class="btn btn-primary">Выдача кредита</a>
+                <a href="" class="btn btn-primary">Отказ выдачи кредита</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

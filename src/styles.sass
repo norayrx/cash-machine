@@ -1,0 +1,334 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/sass/_vars.sass'
+@import 'assets/sass/_fonts.sass'
+
+body
+  font-family: "Gilroy"
+
+h2
+  font-size: 22px
+  font-weight: 500
+h3
+  font-size: 20px
+h4
+  font-size: 18px
+  span
+    color: $blue-opacity
+.align-center
+  align-items: center
+.justify-center
+  display: flex
+  justify-content: center
+.direction
+  &-column
+    flex-direction: column
+.num-wrap
+  color: #fff
+  background-color: $blue2
+  display: block
+  padding: 2px 6px
+  border-radius: 2px
+  font-size: 16px
+  line-height: 16px
+ul
+  padding: 0
+  margin: 0
+  list-style-type: none
+.row
+  &-mr
+    margin-right: -30px
+
+.btn
+  font-size: 16px
+  font-weight: 500
+  padding: 9px 18px
+  border-radius: 5px
+  color: $white
+  transition: .3s
+  cursor: pointer
+  text-align: center
+  &:hover
+    opacity: 0.8
+    text-decoration: none
+  &-1
+    border: 1px solid $blue
+    &:hover, &:active, &:focus
+      background-color: $blue
+      color: $white
+      text-decoration: none
+      opacity: 1
+    &-2
+      color: $blue3
+      font-weight: 500
+      border: 1px solid $main
+      width: auto
+      display: inline-block
+      &:hover
+        color: $white
+        background-color: $main
+  &-primary
+    background-color: $blue-primary
+    &:hover
+      color: $white
+  &-light
+    background-color: #ecf1f5
+    color: $blue3
+  &-success
+    background-color: $green
+    padding-left: 10px
+    padding-right: 10px
+  &-danger
+    background-color: $red
+  &-fb
+    background-image: url(assets/img/icons/facebook.png)
+    background-repeat: no-repeat
+    background-position: 15px 50%
+    border: 1px solid $white
+    border-radius: 5px
+    display: inline-block
+    padding-left: 50px
+    padding-top: 10px
+    padding-bottom: 10px
+    &:hover
+      color: $white
+      opacity: 0.8
+      text-decoration: none
+  &-wrapper
+    text-align: center
+    &__left
+      text-align: left
+      .btn
+        display: inline-block
+        &:not(:last-child)
+          margin-right: 30px
+
+.page
+  &-content
+    background-color: $gray
+    padding: 25px 0
+  &-block
+    padding-left: 30px
+    padding-right: 30px
+    background-color: #fff
+    border-radius: 5px
+    padding-top: 20px
+    h2,h3,h4,p
+      color: $blue3
+      margin: 0
+
+.separator
+  background-color: #ced1da
+  height: 1px
+  width: 100%
+  margin-top: 20px
+
+.input-image
+  width: 140px
+  height: 140px
+  background-color: #dedede
+  border-radius: 50%
+  background-image: url(assets/img/icons/man.png)
+  background-repeat: no-repeat
+  background-position: 50%
+  position: relative
+  cursor: pointer
+  input[type="file"]
+    opacity: 0
+    outline: none
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    cursor: pointer
+  .overlay
+    position: absolute
+    width: 220px
+    padding: 25px 20px
+    background-color: $white
+    left: 110px
+    bottom: 90px
+    box-shadow: 0px 3px 20.16px 0.84px rgba(0, 0, 0, 0.09)
+    font-size: 15px
+    color: $blue3
+    z-index: 9
+    display: none
+    &::before
+      content: ''
+      border: 20px solid transparent
+      border-top: 20px solid #fff
+      border-left: 0 solid #fff
+      position: absolute
+      bottom: -40px
+  &:hover
+    .overlay
+      display: block
+  &--selected
+    display: flex
+    border-radius: 50%
+    align-content: center
+    justify-content: center
+    overflow: hidden
+
+.input-file
+  position: relative
+  .btn
+    margin-right: 20px
+  span
+    font-weight: 500
+  input[type="file"]
+    position: absolute
+    font-size: 0
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    cursor: pointer
+    opacity: 0
+    z-index: 9
+
+.form
+  input[type="text"], select
+    padding-left: 13px
+    border: 1px solid $gray2
+    height: 45px
+    font-size: 16px
+    color: $blue3
+    font-weight: 500
+    display: block
+    margin-bottom: 30px
+    border-radius: 5px
+    width: 265px
+  select
+    cursor: pointer
+    background-image: url("assets/img/icons/arrow-down.png")
+    background-repeat: no-repeat
+    background-position: 95% 50%
+    padding-right: 50px
+    appearance: none
+    label
+      display: block
+  .input
+    &-full
+      input, select
+        width: 100%
+    &-auto
+      input, select
+        width: auto
+  .btn-wrapper
+    margin-bottom: 30px
+
+
+.form
+  &-2
+    label
+      font-size: 20px
+      color: $blue3
+      font-weight: 500
+
+
+.datepicker
+  background-image: url(assets/img/icons/arrow-down.png)
+  background-repeat: no-repeat
+  background-position: 95% 50%
+  cursor: pointer
+
+
+.theme-green
+  .bs-datepicker-head
+    background-color: $blue
+  .bs-datepicker-body
+    table
+      td
+        span.selected
+          background-color: $blue
+        &.week
+          span
+            color: $blue
+
+
+
+.graph
+  display: flex
+  flex-direction: column
+  width: 100%
+  &-main
+    display: flex
+    width: 100%
+  &-scale
+    &-item
+      font-size: 13px
+      text-align: right
+      height: 22.5px
+  &-content
+    width: 100%
+    height: 100%
+    margin-left: 5px
+    background-color: #ecf1f5
+    position: relative
+  &-layout
+    height: 100%
+    &--item
+      height: 22.5px
+      width: 100%
+      position: relative
+      &::before
+        content: ''
+        height: 1px
+        width: 100%
+        position: absolute
+        top: 50%
+        left: 0
+
+        background-color: $gray
+  &-titles
+    display: flex
+    padding-left: 13px
+    margin-left: 27px
+    margin-top: 80px
+    &--item
+      transform: rotate(-90deg)
+      font-weight: 500
+      font-size: 15px
+      color: $blue3
+      white-space: nowrap
+  &-options
+    position: absolute
+    overflow: hidden
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    padding-left: 13px
+    padding-right: 13px
+    display: flex
+    &--item
+      height: 20px
+      position: relative
+      &::after
+        position: absolute
+        left: 0
+        top: 0
+        content: ''
+        height: 100%
+        width: 40%
+        background-color: #494e61
+.chance
+  &-item
+    margin-top: 20px
+    &--top
+      display: flex
+      align-items: center
+      span
+        font-size: 50px
+        font-weight: normal
+        color: $blue3
+      h3
+        font-weight: normal
+        max-width: 40%
+        margin-left: 10px
+        line-height: 25px
+    p
+      color: $blue-opacity
+
+

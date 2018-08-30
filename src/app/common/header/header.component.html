@@ -1,0 +1,80 @@
+<header class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-block">
+        <div class="menu-btn" (click)="headerMenuOpen = true">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="header-title">
+          <h1>
+            Cash
+            <span>
+              Machine
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div class="header-block">
+        <div class="header-attempts">
+          <p><strong>Осталось проверок:</strong></p>
+          <div class="num-wrap">
+            5
+          </div>
+          <a href="" class="btn btn-1">Пополнить</a>
+        </div>
+      </div>
+      <div class="header-block">
+        <div class="header-bar">
+          <a href="">
+            <img src="../../../assets/img/icons/settings.png" alt="">
+          </a>
+          <a href="" class="messages">
+            <img src="../../../assets/img/icons/messages.png" alt="">
+            <div class="messages-unread">
+              4
+            </div>
+          </a>
+          <a href="">
+              <img src="../../../assets/img/icons/call.png" alt="">
+          </a>
+          <a href="">
+              <img src="../../../assets/img/icons/exit.png" alt="">
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <nav class="header-menu"
+    [ngClass]="{'header-menu--open': headerMenuOpen}">
+      <div class="menu-btn menu-btn--close" (click)="headerMenuOpen = false">
+        <div></div>
+        <div></div>
+      </div>
+        <ul>
+          <li>
+            <a href="">Скоринг заёмщика</a>
+          </li>
+          <li class="active">
+            <a href="">Архив</a>
+          </li>
+          <li>
+            <a href="">Настройки</a>
+          </li>
+          <li>
+            <a href="">Другие решения</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-menu--overlay"
+      [ngClass]="{'header-menu--overlay__hidden': !headerMenuOpen}"
+      (click)="headerMenuOpen = false"></div>
+  </div>
+
+
+</header>
